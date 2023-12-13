@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_root" name="Маркировка Товаров">
+            <menuitem id="first" name="Товары">
+                <menuitem id="product_menu_action" action="product_action"/>
+            </menuitem>
+            <menuitem id="second" name="Акты">
+                <menuitem id="act_menu_action" action="act_action"/>
+            </menuitem>
+            <menuitem id="third" name="Маркированные товары">
+                <menuitem id="marked_product_menu_action" action="marked_product_actions"/>
+            </menuitem>
+        </menuitem>
+    </data>
+</odoo>

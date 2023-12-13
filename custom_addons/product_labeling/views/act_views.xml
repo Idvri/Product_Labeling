@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="act_action" model="ir.actions.act_window">
+            <field name="name">Управление актами</field>
+            <field name="res_model">act</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="act_form" model="ir.ui.view">
+            <field name="name">act.form</field>
+            <field name="model">act</field>
+            <field name="arch" type="xml">
+                <form edit="0" create="0">
+                    <sheet>
+                        <group>
+                            <field name="name" readonly="1" />
+                            <field name="create_date" readonly="1" />
+                            <field name="status" />
+                        </group>
+                        <group name="purchase_fields" invisible='status != "purchase"'>
+                            <field name="stock_to" />
+                            <field name="products" />
+                            <field name="costs" />
+                        </group>
+                        <group name="internal_fields" invisible='status != "internal"'>
+                            <field name="stock_from" />
+                            <field name="stock_to" />
+                            <field name="marked_products" />
+                            <field name="costs" />
+                        </group>
+                        <group name="promotion_fields" invisible='status != "promotion"'>
+                            <field name="stock_from" />
+                            <field name="marked_products" />
+                            <field name="costs" />
+                        </group>
+                        <group name="agency_fields" invisible='status != "agency"'>
+                            <field name="stock_from" />
+                            <field name="marked_products" />
+                            <field name="costs" />
+                        </group>
+                        <group name="sale_fields" invisible='status != "sale"'>
+                            <field name="stock_from" />
+                            <field name="marked_products" />
+                            <field name="costs" />
+                        </group>
+                        <button string="Создать" type="object" class="oe_highlight" name="create_act" invisible='id != False' />
+                        <field name="id" invisible="True" />
+                        <field name="is_applied" invisible="True" />
+                        <button string="Применить" type="object" class="oe_highlight" name="to_apply" invisible='id == False or is_applied == True' />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_tree" model="ir.ui.view">
+            <field name="name">act.tree</field>
+            <field name="model">act</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="create_date" />
+                    <field name="name" />
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="act_products_tree" model="ir.ui.view">
+            <field name="name">act.products.tree</field>
+            <field name="model">act.products</field>
+            <field name="arch" type="xml">
+                <tree create="True" editable="bottom">
+                    <field name="product" />
+                    <field name="amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="act_costs_tree" model="ir.ui.view">
+            <field name="name">act.costs.tree</field>
+            <field name="model">act.costs</field>
+            <field name="arch" type="xml">
+                <tree create="True" editable="bottom">
+                    <field name="status" />
+                    <field name="count" />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

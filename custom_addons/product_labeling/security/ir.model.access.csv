@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_labeling.access_product,Access Product,model_product,base.group_user,1,1,1,1
+product_labeling.access_act,Access Act,model_act,base.group_user,1,1,1,1
+product_labeling.access_act.products,Access ActProducts,model_act_products,base.group_user,1,1,1,1
+product_labeling.access_act.costs,Access ActCosts,model_act_costs,base.group_user,1,1,1,1
+product_labeling.access_marked_product,Access MarkedProduct,model_marked_product,base.group_user,1,1,1,1
+product_labeling.access_marked_product.costs,Access MarkedProductCosts,model_marked_product_costs,base.group_user,1,1,1,1
