@@ -1,5 +1,5 @@
 {
-    "name": "Product_Labeling",
+    "name": "Product Labeling",
     "depends": ["base"],
     "license": "GPL-3",
     "module_type": "official",
